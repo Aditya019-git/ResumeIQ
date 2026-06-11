@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import {connectDb} from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
+import resumeRoutes from './routes/resumeRoutes.js';
 
 
 
@@ -16,6 +17,7 @@ connectDb();
 app.use(cors());
 app.use(express.json());
 app.use('/api/auth',authRoutes);
+app.use('/api/resumes',resumeRoutes);
 
 app.get('/api/test',(req,res)=>{
     res.json({
